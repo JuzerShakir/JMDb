@@ -1,11 +1,10 @@
 require 'spec_helper'
 
 describe "Tvseries" do
-  describe "GET /tvseries" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get tvseries_index_path
-      response.status.should be(200)
-    end
+  subject { page }
+
+  describe "Home" do
+    before { visit tv_series_path }
+    it { should have_content('2021') }
   end
 end
